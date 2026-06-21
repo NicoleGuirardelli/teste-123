@@ -14,14 +14,37 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    /* necessario ver ao final */
 
 }
+html {
+    background-color: var(--cor-fundo);
+}
 
-body{
-    background-color:var(--cor-fundo);
-    color:lch(90.34% 11.77 20.2);
+body {  
+    color: var(--cor-texto);
+    min-height: 100vh;
     /* pegar fonte legal */
+}
+body::before {
+    content: "";
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.25), transparent 70%);
+    top: 120px;
+    right: -100px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(251, 113, 133, 0.18), transparent 70%);
+    bottom: 80px;
+    left: -80px;
+    z-index: -1;
 }
 /* melhorar responsividade */
 @media (max-width: 900px){
@@ -43,7 +66,7 @@ body{
     .home-texto h2{
         font-size: 42px;
     }
-    home-texto h3{
+    .home-texto h3{
         font-size: 21px;
     }
     .botoes{
@@ -83,7 +106,7 @@ header{
     gap: 28px;
 }
 .menu a {
-    color:var(cor-texto-claro);
+    color:var(--cor-texto-claro);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -126,13 +149,13 @@ margin-bottom: 20px;
 .descricao{
     font-size: 18px;
     line-height: 1.7;
-    color:var(cor-texto-claro);
+    color:var(--cor-texto-claro);
     margin-bottom: 32px;
 }
 
 .botoes{
     display: flex;
-    gap: 16+px;
+    gap: 16px;
 }
 .botoes a{
     padding: 14px 27px;
@@ -171,7 +194,7 @@ margin-bottom: 20px;
     position:absolute;
     width: 280px;
     height: 280px;  
-    background: linear-gradient(135deg, var(--cor-laranja), var(#fb7185));
+    background: linear-gradient(135deg, var(--cor-laranja), var(--cor-rosa));
     transform: rotate(45deg);
     box-shadow:0 0 45px rgba(249, 115,22,0.35);
 }
@@ -204,7 +227,7 @@ margin-bottom: 20px;
 .cards:hover{
   transform: translateY(-8px);
   border-color: var(--cor-coral);
-  box-shadow: 0 12 25px rgba(251, 146,60,0.25);
+  box-shadow: 0 12px 25px rgba(251, 146,60,0.25);
 }
 /* melhorar cards */
 
@@ -222,7 +245,7 @@ margin-bottom: 20px;
     gap: 16px;  
 }
 .redes a{
-    color:var(cor-texto-claro);
+    color:var(--cor-texto-claro);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
