@@ -1,0 +1,154 @@
+/* PÁGINA PROJETOS */
+
+.projetos {
+    padding: 70px 8% 90px;
+}
+
+/* TÍTULO DA SEÇÃO */
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-secao p {
+    color: var(--cor-coral);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.titulo-secao h2 {
+    color: var(--cor-texto);
+    font-size: 36px;
+}
+
+/* LISTA DE PROJETOS */
+
+.lista-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* CARD DO PROJETO */
+
+.projeto-card {
+    background-color: var(--cor-card);
+    border: 1px solid rgba(249, 115, 22, 0.18);
+    border-radius: 24px;
+    padding: 30px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.projeto-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.22), transparent 70%);
+    top: -40px;
+    right: -40px;
+    transition: 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cor-coral);
+    box-shadow: 0 14px 35px rgba(249, 115, 22, 0.18);
+}
+
+.projeto-card:hover::before {
+    width: 170px;
+    height: 170px;
+}
+
+/* TEXTOS DO CARD */
+
+.projeto-card h3 {
+    color: var(--cor-texto);
+    font-size: 24px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.projeto-card p {
+    color: var(--cor-texto-suave);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+/* TECNOLOGIAS DO PROJETO */
+
+.tecnologias-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.tecnologias-projeto span {
+    padding: 7px 12px;
+    border-radius: 20px;
+    background-color: rgba(249, 115, 22, 0.12);
+    color: var(--cor-coral);
+    font-size: 14px;
+    border: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+/* BOTÃO DO CARD */
+
+.projeto-card a {
+    width: fit-content;
+    padding: 12px 22px;
+    border-radius: 25px;
+    background-color: var(--cor-laranja);
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.projeto-card a:hover {
+    background-color: var(--cor-coral);
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px) {
+    .lista-projetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .projetos {
+        padding: 55px 8% 70px;
+    }
+
+    .titulo-secao h2 {
+        font-size: 30px;
+    }
+
+    .lista-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .projeto-card {
+        min-height: auto;
+    }
+}
